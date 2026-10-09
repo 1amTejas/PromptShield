@@ -4,7 +4,7 @@ I built PromptShield as a lightweight, open-source defense layer engineered to n
 I decided to open-source the entire ecosystem—the library, model weights, training pipeline, and synthetic datasets—so the community can help build a stronger, shared standard for LLM safety.
 
 # The Problem I Set Out to Solve
-Prompt injection sits firmly at the top of the OWASP Top 10 for LLM applications. As we build autonomous agents that consume increasingly rich external data, adversarial exploits are multiplying fast.
+As we build autonomous agents that consume increasingly rich external data, adversarial exploits are multiplying fast.
 
 Think about an automated inbox manager designed to prioritize messages, filter spam, and draft replies. A single untrusted incoming email containing:
 
