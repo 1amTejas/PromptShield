@@ -1,0 +1,39 @@
+# PromptShield defaults.
+# Override with a custom file (PROMPTSHIELD_CONFIG=/path/to/file.yaml) and/or the
+# PROMPTSHIELD_* environment variables listed in promptshield/config.py.
+
+detector:
+  # Hugging Face model id (or local path) of a sequence-classification model.
+  model: xTRam1/safe-guard-classifier
+  # Set to e.g. http://127.0.0.1:8000 to use a running `promptshield serve`
+  # instance instead of loading the model in-process.
+  url: null
+  max_length: 512
+  # A prompt is flagged when the probability the model puts on "unsafe" labels
+  # reaches this value.
+  threshold: 0.5
+  # Labels (case-insensitive) that count as unsafe.
+  unsafe_labels: [injection, jailbreak, unsafe, malicious, label_1, "1"]
+  # Seconds to wait for a remote detection server.
+  timeout: 30
+
+helper:
+  # LLM used for attack-type classification and sanitization: anthropic | openai
+  provider: anthropic
+
+llm:
+  # Model names change over time; check your provider's current model list.
+  openai:
+    model: gpt-4o-mini
+    temperature: 0
+    max_tokens: 1000
+    max_retries: 2
+  anthropic:
+    model: claude-haiku-5-5
+    temperature: 0
+    max_tokens: 1000
+    max_retries: 2
+
+guard:
+  max_sanitize_rounds: 3
+  blocked_message: "Sorry, this input was flagged as a possible prompt-injection attempt and was not processed."
