@@ -1,6 +1,6 @@
 # PromptShield
 
-A small defense layer that checks prompts for prompt-injection and jailbreak attempts **before** they reach your LLM. It detects suspicious input, can label the type of attack, and can optionally rewrite the prompt into a safer version.
+A small defense layer that checks prompts for prompt-injection and jailbreak attempts **before** they reach your LLM. It detects suspicious input, can label the type of attack, and can optionally rewrite the prompt into a safer version. (Requires Python 3.9+)
 
 ```python
 from promptshield import Guard
